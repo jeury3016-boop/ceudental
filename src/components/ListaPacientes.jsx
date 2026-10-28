@@ -1,6 +1,6 @@
 import TarjetaPaciente from "./TarjetaPaciente";
 
-function ListaPacientes({ pacientes }) {
+function ListaPacientes({ pacientes, onEliminar }) {
     return (
         <div>
             {pacientes.map((paciente) => (
@@ -9,6 +9,7 @@ function ListaPacientes({ pacientes }) {
                 nombre={paciente.nombre}
                 telefono={paciente.telefono}
                 motivo={paciente.motivo}
+                onEliminar={() => onEliminar(paciente.id)}
                 />
             ))}
         </div>
