@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import ListaPacientes from "./components/ListaPacientes";
+import FormularioPaciente from "./components/FormularioPaciente";
 
 function App() {
   const [pacientes, setPacientes] = useState([
@@ -13,9 +14,14 @@ function App() {
     setPacientes(pacientes.filter(paciente => paciente.id !== id));
   }
 
+  function agregarPaciente(nuevo) {
+    setPacientes([...pacientes, nuevo]);
+  }
+
   return (
     <div>
       <h1>CEUDENTAL</h1>
+      <FormularioPaciente onAgregar={agregarPaciente} />
       <ListaPacientes pacientes={pacientes} onEliminar={eliminarPaciente} />
     </div>
   );
