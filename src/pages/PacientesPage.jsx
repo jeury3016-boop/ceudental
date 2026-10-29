@@ -1,11 +1,11 @@
-import { useState } from "react";
-
+import { useState, useMemo } from "react";
+import useLocalStorage from "../hooks/useLocalStorage"; 
 import ListaPacientes from "../components/ListaPacientes";
 import FormularioPaciente from "../components/FormularioPaciente";
 import Buscador from "../components/Buscador";
 
 function PacientesPage() {
-  const [pacientes, setPacientes] = useState([
+  const [pacientes, setPacientes] = useLocalStorage("pacientes", [
     { id: 1, nombre: "Juan Pérez", telefono: "8498821554", motivo: "Dolor de muela" },
     { id: 2, nombre: "María López", telefono: "8498821555", motivo: "Limpieza bucal" },
     { id: 3, nombre: "Víctor Lara", telefono: "8095521122", motivo: "Revisión dental" },
@@ -20,8 +20,11 @@ function PacientesPage() {
     setPacientes([...pacientes, nuevo]);
   }
 
-  const pacientesFiltrados = pacientes.filter((paciente) =>
-    paciente.nombre.toLowerCase().includes(busqueda.toLowerCase())
+  const pacientesFiltrados = useMemo(() =>
+    pacientes.filter((paciente) =>
+      paciente.nombre.toLowerCase().includes(busqueda.toLowerCase())
+    ),
+    [pacientes, busqueda]
   );
 
   return (
