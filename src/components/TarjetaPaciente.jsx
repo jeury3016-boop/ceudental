@@ -1,7 +1,11 @@
-function TarjetaPaciente({ nombre, telefono, motivo, onEliminar }) {
+import { Link } from "react-router-dom";
+
+function TarjetaPaciente({ id, nombre, telefono, motivo, onEliminar }) {
     return (
-        <div>
-            <h3>{nombre}</h3>
+        <div className="tarjeta">
+            <h3>
+                <Link to={`/pacientes/${id}`}>{nombre}</Link>
+            </h3>
             <p>Teléfono: {telefono}</p>
             <p>Motivo: {motivo}</p>
             <button onClick={onEliminar}>Eliminar</button>

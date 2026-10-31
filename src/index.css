@@ -1,0 +1,181 @@
+body {
+  font-family: sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 16px;
+  background-color: #f4f8fb;
+  color: #222;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 20px;
+  background-color: #0b7a9e;
+  border-radius: 8px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+nav a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+  margin-right: auto;
+}
+
+button {
+  background-color: #0b7a9e;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #08607d;
+}
+
+nav button {
+  background-color: white;
+  color: #0b7a9e;
+}
+
+input {
+  padding: 8px;
+  margin: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contenido {
+  padding: 16px 0;
+}
+
+/* Inicio */
+.hero {
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.hero-capa {
+  background-color: rgba(0, 0, 0, 0.55);
+  color: white;
+  padding: 60px 32px;
+}
+
+.hero-capa h2 {
+  font-size: 32px;
+  margin-top: 0;
+}
+
+.hero-boton {
+  display: inline-block;
+  background-color: #0b7a9e;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.servicios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 12px;
+}
+
+.servicio {
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.servicio span {
+  font-size: 32px;
+}
+
+/* Pacientes */
+.contador {
+  background-color: #e0f2f8;
+  border-left: 4px solid #0b7a9e;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.tarjeta {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+  background-color: white;
+}
+
+.tarjeta h3 {
+  margin-top: 0;
+}
+
+/* Acerca */
+.foto {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.credito {
+  font-size: 12px;
+  color: #777;
+}
+
+footer {
+  text-align: center;
+  padding: 16px;
+  margin-top: 24px;
+  border-top: 1px solid #ddd;
+  font-size: 14px;
+  color: #777;
+}
+
+/* Tema oscuro */
+.oscuro { background: #1e1e1e; color: #f0f0f0; min-height: 100vh; }
+.oscuro a { color: #8ab4f8; }
+
+body:has(.oscuro) {
+  background-color: #1e1e1e;
+}
+
+.oscuro nav {
+  background-color: #111;
+}
+
+.oscuro input {
+  background-color: #333;
+  color: #eee;
+  border-color: #555;
+}
+
+.oscuro .tarjeta,
+.oscuro .servicio {
+  background-color: #2a2a2a;
+  border-color: #444;
+}
+
+.oscuro .contador {
+  background-color: #2a2a2a;
+}
+
+.oscuro .hero-boton {
+  color: white;
+}

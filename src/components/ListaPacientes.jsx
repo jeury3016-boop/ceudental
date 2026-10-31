@@ -6,6 +6,7 @@ function ListaPacientes({ pacientes, onEliminar }) {
             {pacientes.map((paciente) => (
                 <TarjetaPaciente
                 key={paciente.id}
+                id={paciente.id}
                 nombre={paciente.nombre}
                 telefono={paciente.telefono}
                 motivo={paciente.motivo}
