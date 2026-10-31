@@ -1,6 +1,6 @@
 body {
   font-family: sans-serif;
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 16px;
   background-color: #f4f8fb;
@@ -73,7 +73,12 @@ input {
 .hero-capa {
   background-color: rgba(0, 0, 0, 0.55);
   color: white;
-  padding: 60px 32px;
+  padding: 80px 48px;
+}
+
+.hero-capa p {
+  max-width: 650px;
+  font-size: 18px;
 }
 
 .hero-capa h2 {
