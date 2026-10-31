@@ -1,39 +1,36 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { TemaContext } from "../context/TemaContext";
+import { IdiomaContext } from "../context/IdiomaContext";
 import consultorio from "../assets/consultorio.jpg";
 
-const servicios = [
-    { id: 1, icono: "🪥", nombre: "Limpieza dental" },
-    { id: 2, icono: "😁", nombre: "Blanqueamiento" },
-    { id: 3, icono: "🦷", nombre: "Ortodoncia" },
-    { id: 4, icono: "🩺", nombre: "Revisión general" },
-];
+const iconos = ["🪥", "😁", "🦷", "🩺"];
 
 function InicioPage() {
     const { oscuro } = useContext(TemaContext);
+    const { t } = useContext(IdiomaContext);
 
     return (
         <div>
             <section className="hero" style={{ backgroundImage: `url(${consultorio})` }}>
                 <div className="hero-capa">
-                    <h2>Bienvenido a CEUDENTAL</h2>
-                    <p>CEUDENTAL ofrece servicios odontológicos para cuidar la salud bucal de sus pacientes, brindando atención profesional para mantener una sonrisa sana y hermosa.</p>
-                    <Link to="/pacientes" className="hero-boton">Ver pacientes</Link>
+                    <h2>{t.bienvenida}</h2>
+                    <p>{t.descripcion}</p>
+                    <Link to="/pacientes" className="hero-boton">{t.verPacientes}</Link>
                 </div>
             </section>
 
-            <h2>Nuestros servicios</h2>
+            <h2>{t.nuestrosServicios}</h2>
             <div className="servicios">
-                {servicios.map((servicio) => (
-                    <div key={servicio.id} className="servicio">
-                        <span>{servicio.icono}</span>
-                        <p>{servicio.nombre}</p>
+                {t.servicios.map((servicio, i) => (
+                    <div key={servicio} className="servicio">
+                        <span>{iconos[i]}</span>
+                        <p>{servicio}</p>
                     </div>
                 ))}
             </div>
 
-            <p>Tema actual: {oscuro ? "oscuro 🌙" : "claro ☀️"}</p>
+            <p>{t.temaActual}: {oscuro ? t.temaOscuro : t.temaClaro}</p>
         </div>
     );
 }

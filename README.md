@@ -9,7 +9,8 @@ Aplicación web hecha con React para gestionar los pacientes de una clínica den
 - Tiene un buscador que filtra los pacientes por nombre y muestra "Sin resultados" cuando no hay coincidencias.
 - Cada paciente tiene una página de detalle.
 - Los pacientes se guardan en el navegador (localStorage), así que no se pierden al recargar.
-- Tiene tema claro y oscuro.
+- Tiene tema claro y oscuro (`TemaContext`).
+- Se puede cambiar el idioma entre español e inglés (`IdiomaContext`); cambia todos los textos de la app.
 
 ## Caso B
 

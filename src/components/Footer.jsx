@@ -1,7 +1,12 @@
+import { useContext } from "react";
+import { IdiomaContext } from "../context/IdiomaContext";
+
 function Footer() {
+  const { t } = useContext(IdiomaContext);
+
   return (
     <footer>
-      <p>🦷 CEUDENTAL · Proyecto final de React · Talendig</p>
+      <p>{t.pie}</p>
     </footer>
   );
 }

@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { IdiomaContext } from "../context/IdiomaContext";
 
 function FormularioPaciente({ onAgregar }) {
+    const { t } = useContext(IdiomaContext);
     const [nombre, setNombre] = useState("");
     const [telefono, setTelefono] = useState("");
     const [motivo, setMotivo] = useState("");
@@ -19,21 +21,21 @@ function FormularioPaciente({ onAgregar }) {
     return (
         <form onSubmit={manejarEnvio}>
             <input
-                placeholder="Nombre"
+                placeholder={t.nombre}
                 value={nombre}
                 onChange={(e) => setNombre(e.target.value)}
             />
             <input
-                placeholder="telefono"
+                placeholder={t.telefono}
                 value={telefono}
                 onChange={(e) => setTelefono(e.target.value)}
             />
             <input
-                placeholder="motivo"
+                placeholder={t.motivo}
                 value={motivo}
                 onChange={(e) => setMotivo(e.target.value)}
             />
-            <button type="submit">agregar</button>
+            <button type="submit">{t.agregar}</button>
         </form>
     );
 }
